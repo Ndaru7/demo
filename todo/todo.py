@@ -11,16 +11,29 @@ while(1):
          print(f"{key}    {' '*15} {data[0]} {' '*15}  {data[1]}")
 
     print("-"*60 + "\n")
-    print("1. add list")
-    print("2. update list")
-    print("3. delete list")
-    print("4. exit app\n")
+    print("1. checklist")
+    print("2. add list")
+    print("3. update list")
+    print("4. delete list")
+    print("5. exit app\n")
 
     print("[INFO] Pilih menu berdasarkan angka")
     user_input = input("[INPUT] ")
-
-    # Bagian Add todo list
+    
+    # Bagian Checklist todo
     if user_input == "1":
+        print("[INFO] CHECKLIST")
+        print("[INFO] Masukan ID todo yang ingin di checklist")
+        checklist_id = int(input("[INPUT] "))
+        if checklist_id not in database:
+            print("[ERROR] ID tidak ada didatabase")
+            continue
+        checklist_todo = database[checklist_id][0]
+        # checklist_status = database[checklist_id][1]
+        checklist_status = "selesai"
+        database.update({checklist_id: [checklist_todo, checklist_status]})
+    # Bagian Add todo list
+    elif user_input == "2":
         print("[INFO] ADD LIST")
         input_id = id
         print("[INFO] Masukan todo list")
@@ -31,7 +44,7 @@ while(1):
         id += 1
     
     # Bagian Update todo list
-    elif user_input == "2":
+    elif user_input == "3":
         print("[INFO] UPDATE LIST")
         print("[INFO] Masukan ID todo list yang ingin di Update")
         update_id = int(input("[INPUT] "))
@@ -46,7 +59,7 @@ while(1):
         database.update({update_id: [update_todo, update_status]})
 
     # Bagian Delete todo list
-    elif user_input == "3":
+    elif user_input == "4":
         print("[INFO] DELETE LIST")
         print("[INFO] Masukan ID todo list yang ingin di Delete")
         delete_id = int(input("[INPUT] "))
@@ -57,7 +70,7 @@ while(1):
         database.pop(delete_id)
     
     # Bagian exit program
-    elif user_input == "4":
+    elif user_input == "5":
         print("[INFO] exit app\n")
         break
 
