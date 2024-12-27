@@ -1,5 +1,6 @@
 # TODO APP
 
+"""
 id = 0
 database = {}
 
@@ -75,3 +76,62 @@ while(1):
 
     else:
         print("[ERROR] Pilihan tidak valid\n") 
+"""
+id = 0
+database = {}
+
+def check_todo():
+    pass
+
+def read_todo():
+    print("===TODO APP===")
+    print("id | " + " "*15 + "Todo List" + " "*15 + " | Status")
+    print("-"*60)
+    for key,data in database.items():
+         print(f"{key}    {' '*15} {data[0]} {' '*15}  {data[1]}")
+
+    print("-"*60 + "\n")
+    print("1. checklist")
+    print("2. add list")
+    print("3. update list")
+    print("4. delete list")
+    print("5. exit app\n")
+
+def create_todo():
+    pass
+
+def update_todo():
+    pass
+
+def delete_todo():
+    pass
+
+def main():
+    while(1):
+        read_todo()
+
+        print("[INFO] Pilih menu berdasarkan angka")
+        user_input = input("[INPUT] ")
+
+        if user_input == "1":
+            pass
+
+        elif user_input == "2":
+            pass
+
+        elif user_input == "3":
+            pass
+
+        elif user_input == "4":
+            pass
+
+        elif user_input == "5":
+            return "[INFO] Exit App"
+            break
+                    
+        else:
+            print("[ERROR] Pilihan tidak valid")
+
+if __name__ == "__main__":
+    print(main())
+
