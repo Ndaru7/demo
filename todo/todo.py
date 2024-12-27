@@ -54,8 +54,7 @@ while(1):
 
         print("[INFO] Masukkan todo baru")
         update_todo = input("[INPUT] ")
-        print("[INFO] Masukan status baru")
-        update_status = input("[INPUT] ")
+        update_status = database[update_id][1]
         database.update({update_id: [update_todo, update_status]})
 
     # Bagian Delete todo list
@@ -75,4 +74,4 @@ while(1):
         break
 
     else:
-        print("[ERROR] Terjadi kesalahan\n") 
+        print("[ERROR] Pilihan tidak valid\n") 
