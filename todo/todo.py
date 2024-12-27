@@ -29,6 +29,15 @@ while(1):
 
     elif user_input == "2":
         print("[INFO] update list\n")
+        print("[INFO] Masukan ID todo list yang ingin di Update")
+        update_id = int(input("[INPUT] id: "))
+        if update_id not in database:
+            print("[ERROR] ID tidak ada pada database")
+            break
+        print("[INFO] Masukkan todo baru")
+        update_todo = input("[INPUT] Todo: ")
+        update_status = input("[INPUT] Status: ")
+        database.update({update_id: [update_todo, update_status]})
 
     elif user_input == "3":
         print("[INFO] delete list\n")
