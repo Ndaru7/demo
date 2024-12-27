@@ -1,14 +1,14 @@
 # TODO APP
 
-database = {1: ["todo list", "✓"],
-            2: ["todo list 2", "X"]}
+id = 0
+database = {}
 
 while(1):
     print("===TODO APP===")
-    print("No | " + " "*15 + "Todo List" + " "*15 + " | Status")
+    print("id | " + " "*15 + "Todo List" + " "*15 + " | Status")
     print("-"*60)
-    for data in database.values():
-         print(f"    {' '*15} {data[0]} {' '*15}  {data[1]}")
+    for key,data in database.items():
+         print(f"{key}    {' '*15} {data[0]} {' '*15}  {data[1]}")
 
     print("-"*60 + "\n")
     print("1. add list")
@@ -20,15 +20,18 @@ while(1):
 
     if user_input == "1":
         print("[INFO] add list\n")
-        break
+        input_id = id
+        input_todo = input("Todo: ")
+        input_status = "belum"
+
+        database.update({input_id: [input_todo, input_status]})
+        id += 1
 
     elif user_input == "2":
         print("[INFO] update list\n")
-        break
 
     elif user_input == "3":
         print("[INFO] delete list\n")
-        break
     
     elif user_input == "4":
         print("[INFO] exit app\n")
@@ -36,3 +39,7 @@ while(1):
 
     else:
         print("[ERROR] Terjadi kesalahan\n")
+
+    exit_option = input("[SELECT] Apakah sudah selesai? (y/n): ")
+    if exit_option == "y" or exit_option == "y":
+        break
