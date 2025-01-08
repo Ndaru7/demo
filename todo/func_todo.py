@@ -75,7 +75,9 @@ while(1):
         break
 
     else:
-        print("[ERROR] Pilihan tidak valid\n") 
+        print("[ERROR] Pilihan tidak valid\n")
+
+    
 """
 id = 0
 database = {}
