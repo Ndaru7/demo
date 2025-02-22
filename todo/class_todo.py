@@ -1,6 +1,6 @@
 class Todo:
 
-    database = {}
+    database = {"0": ["name", "status"], "1": ["nama1", "status1"]}
 
     def __init__(self, id, name, status):
         self.id = id
@@ -8,13 +8,14 @@ class Todo:
         self.status = status
 
     def checklist():
-        pass
+        print("==CHECKLIST==")
 
     def add_list():
-        pass
+        print("==ADD LIST==")
 
     def read_list():
-        pass
+        for key, value in Todo.database.items():
+            print(f"{key.ljust(4)}| {value[0].ljust(57)}| {value[1].ljust(10)}")
 
     def update_list():
         pass
@@ -23,7 +24,7 @@ class Todo:
         pass
 
     def show_menu():
-        print("===TODO APP===")
+        print("\n===MENU===")
         print("1. Checklist")
         print("2. Add list")
         print("3. Update list")
@@ -31,8 +32,13 @@ class Todo:
         print("5. Exit")
 
 while True:
-    todo = Todo.show_menu()
-    usr_menu = input("[INPUT]: ")
+    print("[TODO APP]".center(70))
+    print("="*75)
+    print("ID".center(3), "|", "Name".center(56), "|", "Status".center(10))
+    print("="*75)
+    Todo.read_list()
+    Todo.show_menu()
+    usr_menu = input("\n[INPUT]: ")
 
     if usr_menu == "1":
         pass
@@ -43,6 +49,7 @@ while True:
     elif usr_menu == "4":
         pass
     elif usr_menu == "5":
-        pass
+        print("Exit program...")
+        break
     else:
         print("Something wrong :(")
